@@ -1,0 +1,12 @@
+[package]
+name = "aoc-rs-codspeed"
+authors = ["Ethan Jones <ictrobot@outlook.com>"]
+edition = "2021"
+license = "MIT"
+publish = false
+repository = "https://github.com/ictrobot/aoc-rs-codspeed"
+rust-version = "1.83.0"
+
+[dependencies]
+aoc = { git = "https://github.com/ictrobot/aoc-rs.git" }
+paste = "1.0.15"
