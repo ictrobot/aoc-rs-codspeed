@@ -11,7 +11,7 @@ macro_rules! callback {
                 pub fn part1(input: &str) -> impl std::fmt::Display {
                     let solution = aoc::$year::$day::new(
                         input,
-                        aoc::utils::input::InputType::Example
+                        aoc::utils::input::InputType::Real
                     ).unwrap();
                     solution.part1()
                 }
@@ -21,7 +21,7 @@ macro_rules! callback {
                 pub fn part2(input: &str) -> impl std::fmt::Display {
                     let solution = aoc::$year::$day::new(
                         input,
-                        aoc::utils::input::InputType::Example
+                        aoc::utils::input::InputType::Real
                     ).unwrap();
                     solution.part2()
                 }
