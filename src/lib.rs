@@ -5,7 +5,7 @@ macro_rules! wrapper {
             #[inline]
             pub fn part1(input: &str) -> impl std::fmt::Display {
                 let solution = aoc::year2024::$old::new(
-                    input,
+                    input.trim_ascii_end(),
                     aoc::utils::input::InputType::Real
                 ).unwrap();
                 solution.part1()
@@ -15,7 +15,7 @@ macro_rules! wrapper {
             #[inline]
             pub fn part2(input: &str) -> impl std::fmt::Display {
                 let solution = aoc::year2024::$old::new(
-                    input,
+                    input.trim_ascii_end(),
                     aoc::utils::input::InputType::Real
                 ).unwrap();
                 solution.part2()
