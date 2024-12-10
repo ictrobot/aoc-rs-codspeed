@@ -1,33 +1,38 @@
-macro_rules! callback {
-    ($(
-        $y:literal => $year:ident{$(
-            $d:literal => $day:ident,
-        )*}
-    )*) => {$($(
-        paste::paste! {
-            pub mod [< day $d >] {
-                #[must_use]
-                #[inline]
-                pub fn part1(input: &str) -> impl std::fmt::Display {
-                    let solution = aoc::$year::$day::new(
-                        input,
-                        aoc::utils::input::InputType::Real
-                    ).unwrap();
-                    solution.part1()
-                }
+macro_rules! wrapper {
+    ($($old:ident => $new:ident $(,)?)*) => {$(
+        pub mod $new {
+            #[must_use]
+            #[inline]
+            pub fn part1(input: &str) -> impl std::fmt::Display {
+                let solution = aoc::year2024::$old::new(
+                    input,
+                    aoc::utils::input::InputType::Real
+                ).unwrap();
+                solution.part1()
+            }
 
-                #[must_use]
-                #[inline]
-                pub fn part2(input: &str) -> impl std::fmt::Display {
-                    let solution = aoc::$year::$day::new(
-                        input,
-                        aoc::utils::input::InputType::Real
-                    ).unwrap();
-                    solution.part2()
-                }
+            #[must_use]
+            #[inline]
+            pub fn part2(input: &str) -> impl std::fmt::Display {
+                let solution = aoc::year2024::$old::new(
+                    input,
+                    aoc::utils::input::InputType::Real
+                ).unwrap();
+                solution.part2()
             }
         }
-    )*)*};
+    )*};
 }
 
-aoc::year2024::puzzles!([callback]);
+wrapper!(
+    Day01 => day1,
+    Day02 => day2,
+    Day03 => day3,
+    Day04 => day4,
+    Day05 => day5,
+    Day06 => day6,
+    Day07 => day7,
+    Day08 => day8,
+    Day09 => day9,
+    Day10 => day10,
+);
