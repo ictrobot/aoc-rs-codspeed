@@ -35,4 +35,5 @@ wrapper!(
     Day08 => day8,
     Day09 => day9,
     Day10 => day10,
+    Day11 => day11,
 );
