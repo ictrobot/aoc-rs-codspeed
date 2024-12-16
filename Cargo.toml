@@ -9,3 +9,4 @@ rust-version = "1.83.0"
 
 [dependencies]
 aoc = { git = "https://github.com/ictrobot/aoc-rs.git" }
+paste = "1.0.15"
