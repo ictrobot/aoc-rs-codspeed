@@ -8,22 +8,22 @@ macro_rules! callback {
             pub mod [< day $d >] {
                 #[must_use]
                 #[inline]
-                pub fn part1(input: &str) -> impl std::fmt::Display {
+                pub fn part1(input: &str) -> String {
                     let solution = aoc::$year::$day::new(
                         input,
                         aoc::utils::input::InputType::Real
                     ).unwrap();
-                    solution.part1()
+                    solution.part1().to_string()
                 }
 
                 #[must_use]
                 #[inline]
-                pub fn part2(input: &str) -> impl std::fmt::Display {
+                pub fn part2(input: &str) -> String {
                     let solution = aoc::$year::$day::new(
                         input,
                         aoc::utils::input::InputType::Real
                     ).unwrap();
-                    solution.part2()
+                    solution.part2().to_string()
                 }
             }
         }
