@@ -8,5 +8,5 @@ repository = "https://github.com/ictrobot/aoc-rs-codspeed"
 rust-version = "1.83.0"
 
 [dependencies]
-aoc = { git = "https://github.com/ictrobot/aoc-rs.git" }
+aoc = { git = "https://github.com/ictrobot/aoc-rs.git", default-features = false, features = ["year2024", "const_lut", "unsafe"] }
 paste = "1.0.15"
