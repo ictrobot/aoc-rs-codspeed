@@ -10,7 +10,7 @@ macro_rules! callback {
                 #[inline]
                 pub fn part1(input: &str) -> String {
                     let solution = aoc::$year::$day::new(
-                        input.trim_ascii_end(),
+                        aoc::utils::input::strip_final_newline(input),
                         aoc::utils::input::InputType::Real
                     ).unwrap();
                     solution.part1().to_string()
@@ -20,7 +20,7 @@ macro_rules! callback {
                 #[inline]
                 pub fn part2(input: &str) -> String {
                     let solution = aoc::$year::$day::new(
-                        input.trim_ascii_end(),
+                        aoc::utils::input::strip_final_newline(input),
                         aoc::utils::input::InputType::Real
                     ).unwrap();
                     solution.part2().to_string()
